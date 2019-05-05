@@ -9,6 +9,15 @@ def post_list(request):
     posts = Post.objects.all
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+def index(request):
+    return render(request, 'blog/index.html', {})
+
+def write(request):
+    return render(request, 'blog/write.html', {})
+
+def test(request):
+    return render(request, 'blog/test.html', {})
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
@@ -26,7 +35,7 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
-    
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":

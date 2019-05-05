@@ -1,34 +1,26 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>지은이의 사이트</title>
+    <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
-    <link href="../../static/blog/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../static/blog/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../../static/blog/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../../static/blog/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
-    <!-- bootstrap-progressbar -->
-    <link href="../../static/blog/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="../../static/blog/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="../../static/blog/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../../static/blog/build/css/custom.min.css" rel="stylesheet">
+    <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -37,7 +29,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>지은이의 사이트</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -48,8 +40,8 @@
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>환영합니다!</span>
-                <h2>유령</h2>
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,10 +53,13 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
-                  <li><a href="{% url 'write' %}"><i class="fa fa-plus"></i> 글쓰기 </a></li>
-
-                <!--
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index2.html">Dashboard2</a></li>
+                      <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
@@ -109,8 +104,7 @@
                       <li><a href="fixed_footer.html">Fixed Footer</a></li>
                     </ul>
                   </li>
-                </ul> 
-                      -->
+                </ul>
               </div>
               <div class="menu_section">
                 <h3>Live On</h3>
@@ -153,11 +147,9 @@
                   </li>                  
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
-              </div> 
-
+              </div>
 
             </div>
-
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
@@ -278,49 +270,86 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-        {% block contents %}
-        {% endblock %}
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Form Upload </h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Dropzone multiple file uploader</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <p>Drag multiple files to the box below for multi upload or click to select files. This is for demonstration purposes only, the files are not uploaded to any server.</p>
+                    <form action="form_upload.html" class="dropzone"></form>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
 
     <!-- jQuery -->
-    <script src="../../static/blog/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../../static/blog/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="../../static/blog/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="../../static/blog/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="../../static/blog/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="../../static/blog/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../../static/blog/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../../static/blog/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="../../static/blog/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="../../static/blog/vendors/Flot/jquery.flot.js"></script>
-    <script src="../../static/blog/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../../static/blog/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../../static/blog/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../../static/blog/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="../../static/blog/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../../static/blog/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../../static/blog/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="../../static/blog/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="../../static/blog/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../../static/blog/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../../static/blog/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="../../static/blog/vendors/moment/min/moment.min.js"></script>
-    <script src="../../static/blog/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Dropzone.js -->
+    <script src="../vendors/dropzone/dist/min/dropzone.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../../static/blog/build/js/custom.min.js"></script>
-	
+    <script src="../build/js/custom.min.js"></script>
   </body>
 </html>
